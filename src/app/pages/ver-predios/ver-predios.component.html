@@ -1,0 +1,123 @@
+<div class="mat-elevation-z8 ajustar">
+  <table mat-table [dataSource]="dataSource" class="p-4 w-100">
+    <!-- Position index -->
+    <ng-container matColumnDef="index" class="ms-2 column">
+      <th mat-header-cell *matHeaderCellDef class="column__codigo">Nª</th>
+      <td mat-cell *matCellDef="let element">{{ element.index }}</td>
+    </ng-container>
+    <!-- Name codigo -->
+    <ng-container matColumnDef="codigo" class="ms-2 column">
+      <th mat-header-cell *matHeaderCellDef class="column__codigo">Codigo</th>
+      <td mat-cell *matCellDef="let element">{{ element.codigo }}</td>
+    </ng-container>
+
+    <!-- Name Nombre_Completo_razonsocial -->
+    <ng-container matColumnDef="Nombre_Completo_razonsocial" class="column">
+      <th mat-header-cell *matHeaderCellDef class="name--height">
+        Nombre Completo o Razon Social
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.Nombre_Completo_razonsocial }}
+      </td>
+    </ng-container>
+
+    <!-- Weight numeroDoc -->
+    <ng-container matColumnDef="numeroDoc" class="column">
+      <th mat-header-cell *matHeaderCellDef>Dni</th>
+      <td mat-cell *matCellDef="let element">{{ element.numeroDoc }}</td>
+    </ng-container>
+
+    <!-- Symbol manzana_cat -->
+    <ng-container matColumnDef="manzana_cat" class="column">
+      <th mat-header-cell *matHeaderCellDef>Direccion Predio</th>
+      <td mat-cell *matCellDef="let element">{{ element.manzana_cat }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Accion" class="column">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let element">
+        <i
+          class="fa fa-trash size text-danger me-2"
+          aria-hidden="true"
+          (click)="deletePredio(element.codigo)"
+        ></i>
+        <i
+          class="fa fa-pencil text-primary me-2 size"
+          aria-hidden="true"
+          data-bs-toggle="modal"
+          data-bs-target="#actualizarPredio"
+          (click)="updatePredio(element.codigo)"
+        ></i>
+        <i
+          class="fa fa-eye text-success me-2 size"
+          aria-hidden="true"
+          data-bs-toggle="modal"
+          data-bs-target="#verPredio"
+          (click)="viewPredio(element.codigo)"
+        ></i>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[8, 11]"
+    showFirstLastButtons
+    class="w-100"
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+  <div
+    class="modal fade bd-example-modal-xl"
+    id="actualizarPredio"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-size">
+      <div class="modal-content h-100">
+        <div class="modal-header">
+          <h5 class="modal-title fs-4" id="actualizarPredio">
+            Actualizar Datos Predio
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body p-0">
+          <app-predio class="h-100"></app-predio>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade bd-example-modal-xl"
+    id="verPredio"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl modal-dialog-centered h-75">
+      <div class="modal-content h-100">
+        <div class="modal-header">
+          <h5 class="modal-title fs-4 text-center" id="verPredio">
+            Ver Datos Predio
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">...</div>
+      </div>
+    </div>
+  </div>
+</div>

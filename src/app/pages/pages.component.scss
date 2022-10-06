@@ -1,0 +1,27 @@
+$color-sidebar: #005bc4;
+$color-sidebar-center: #f4f6f9;
+$color-sidebar-topAndBotton: #ffffff;
+$color-dark-sidebar: black;
+// $size-header $size-footer
+.header {
+  background-color: $color-sidebar-topAndBotton;
+}
+
+.sidebar {
+  background-color: $color-sidebar;
+}
+
+.main-container {
+  height: calc(100vh - 114px);
+  background-color: $color-sidebar-center;
+  margin-left: 250px;
+  transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+}
+
+.footer {
+  background-color: $color-sidebar-topAndBotton;
+}

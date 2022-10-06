@@ -1,0 +1,38 @@
+.section-datos {
+  height: calc(100vh - 205px);
+  margin: 13px 5px;
+  background-color: #fff;
+  box-shadow: 0 0 5px lightblue;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  overflow-y: auto;
+  padding: 0 7%;
+}
+
+.section-datos::-webkit-scrollbar {
+  width: 15px; /* width of the entire scrollbar */
+}
+
+.section-datos::-webkit-scrollbar-track {
+  background: white; /* color of the tracking area */
+}
+
+.section-datos::-webkit-scrollbar-thumb {
+  background: #005bc4; /* color of the tracking area */ /* color of the scroll thumb */
+  border-radius: 20px;
+}
+
+/*@media screen and (max-width: 1049px) {
+  .section-datos {
+    height: 546px;
+  }
+}
+
+@media screen and (max-width: 1138px) {
+  .section-datos {
+    height: 500px;
+  }
+}*/

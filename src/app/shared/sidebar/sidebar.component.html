@@ -1,0 +1,29 @@
+<aside class="aside" #aside>
+  <div>
+    <div class="sidebar-top">
+      <figure class="main-img m-0">
+        <img src="assets/img/logo.png" alt="" />
+      </figure>
+      <div class="sidebar-textMain">
+        <p class="sidebar-top__text">sga chosica</p>
+      </div>
+    </div>
+    <!-- ** Sidebar MENU -->
+    <nav class="menu-container">
+      <ul class="nav">
+        <li class="nav__item" *ngFor="let menu of menuItems">
+          <a href="#" [routerLink]="menu.url">
+            <i class="{{ menu.icono }}" aria-hidden="true"></i>
+            <span class="text nav__link">{{ menu.titulo }}</span>
+          </a>
+        </li>
+        <li class="nav__item--botom overflow-hidden" #buttonBotton>
+          <a (click)="logout()">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <span class="text nav__link">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

@@ -1,0 +1,9 @@
+<app-header
+  class="header"
+  (buttonSidebarAction)="recibirAction($event)"
+></app-header>
+<app-sidebar class="sidebar" [buttonSide]="buttonSidebar"></app-sidebar>
+<div class="main-container" #container>
+  <router-outlet></router-outlet>
+</div>
+<app-footer class="footer" [buttonSide]="buttonSidebar"></app-footer>

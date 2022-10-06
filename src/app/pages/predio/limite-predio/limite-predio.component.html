@@ -1,0 +1,116 @@
+<div class="d-flex justify-content-center section-datos">
+  <div class="container">
+    <div class="row w-100 m-0 my-2 px-1">
+      <h2 class="text-center text-uppercase">Limite de Predio</h2>
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Lindero Frente"
+            [(ngModel)]="limitePredio.P_LinderoFrente"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Lindero Derecho"
+            [(ngModel)]="limitePredio.P_LinderoDerecho"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Lindero Izquierdo"
+            [(ngModel)]="limitePredio.P_LinderoIzquierda"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Lindero Fondo"
+            [(ngModel)]="limitePredio.P_LinderoFondo"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="limitePredio.P_Uso"
+            placeholder="Uso"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="limitePredio.P_Berma"
+            placeholder="Berma"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-floating">
+          <select
+            class="form-select mb-3"
+            id="condicion"
+            #clasificacion
+            (change)="selectClasificacion()"
+          >
+            <option selected value="0" disabled>
+              Seleccione Clasificacion
+            </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <label for="condicion">Clasificacion</label>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-floating">
+          <select
+            class="form-select mb-3"
+            id="condicion"
+            #area
+            (change)="selectarea()"
+          >
+            <option value="0" disabled selected>Seleccione</option>
+            <option value="2">Sin Área Verde</option>
+            <option value="3">Con Área Verde</option>
+          </select>
+          <label for="condicion">Frontis</label>
+        </div>
+      </div>
+      <div class="col-12 d-flex justify-content-evenly pb-3">
+        <div>
+          <button class="btn btn-danger" type="button" (click)="previus()">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i> Atras
+          </button>
+        </div>
+        <div>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            (submit)="enviarDatos()"
+          >
+            Guardar <i class="fa fa-floppy-o" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

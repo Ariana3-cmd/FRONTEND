@@ -1,0 +1,51 @@
+<app-spinner *ngIf="isloading"></app-spinner>
+<div>
+  <header class="header">
+    <div class="containerOfHeader">
+      <figure class="containerImgHeader">
+        <img src="assets/img/logo.png" alt="Logo Chosica" />
+      </figure>
+      <p class="header__text">
+        Municipalidad distrital de
+        <span class="header__text--black">Chosica</span>
+      </p>
+    </div>
+  </header>
+  <main class="main">
+    <form class="form">
+      <div class="box-title">
+        <h1 class="form__title">Iniciar Sesion</h1>
+      </div>
+      <div class="inputWithIcon inputIconBg">
+        <input
+          type="text"
+          placeholder="User Name"
+          class="input"
+          [(ngModel)]="user"
+          [ngModelOptions]="{ standalone: true }"
+          name="usuario"
+        />
+        <i class="fa fa-user fa-lg fa-fw icon" aria-hidden="true"></i>
+      </div>
+      <div class="inputWithIcon inputIconBg">
+        <input
+          type="password"
+          placeholder="Password"
+          class="input"
+          [(ngModel)]="pass"
+          [ngModelOptions]="{ standalone: true }"
+          name="password"
+        />
+        <i class="fa fa-lock fa-lg fa-fw icon" aria-hidden="true"></i>
+      </div>
+      <div class="box-footer">
+        <button type="submit" class="btn btn-primary" (click)="login()">
+          Ingresar
+        </button>
+      </div>
+      <div class="box-footer">
+        <a href="#" class="form__link">Olvidaste tu contraseña ?</a>
+      </div>
+    </form>
+  </main>
+</div>

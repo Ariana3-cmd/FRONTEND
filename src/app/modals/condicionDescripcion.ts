@@ -1,0 +1,33 @@
+export class CondicionDescripcion {
+  P_InefactoPensionista: string = '';
+  P_DescripcionCintribuyente: string = '';
+  P_FechaResolucion: string = '';
+  P_FechaAplicacion: string = '';
+  P_FechaVencimiento: string = '';
+  P_IdTipoVia?: number = undefined;
+  P_TipodePropiedad: string = '';
+  P_PorcentajePropiedad?: string = '';
+  P_FechaAdquisicion: string = '';
+  P_AreaTerreno_PropiaDeclarada: string = '';
+  P_AreaTerreno_ComunDeclarada: string = '';
+  P_PorcentajeBc: string = '';
+  P_TerrenoMatriz: string = '';
+  P_AreaTerreno_PropiaVerificada: string = '';
+  P_AreaTerreno_ComunVerificada: string = '';
+  P_Via: string = '';
+  P_Numero?: string = '';
+  P_Km?: string = '';
+  P_Mz?: string = '';
+  P_Lote?: string = '';
+  P_TipoEdif: string = '';
+  P_NumeroVia?: string = '';
+  P_TipoInt?: number = undefined;
+  P_Sublote: string = '';
+  P_TipoAgrupacion?: string = '';
+  P_NumeroPredio?: string = '';
+  P_Zona: string = '';
+  P_Sector: string = '';
+  P_Manzana: string = '';
+  P_LoteCategoria: string = '';
+  P_HabilitacionHurbana: string = '';
+}

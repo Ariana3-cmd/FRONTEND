@@ -1,0 +1,14 @@
+.section-datos {
+  height: calc(100vh - 205px);
+  margin: 13px 5px;
+  padding: 15px 0;
+  background-color: #fff;
+  box-shadow: 0 0 5px lightblue;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  overflow-y: auto;
+  padding: 0 10%;
+}

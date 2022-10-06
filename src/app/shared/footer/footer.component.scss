@@ -1,0 +1,19 @@
+.footer {
+  margin-left: 250px;
+  height: 57px;
+  background-color: inherit;
+  border-top: 2px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+}
+
+.footer__text {
+  padding-left: 15px;
+  margin: 0;
+  font-weight: bold;
+}

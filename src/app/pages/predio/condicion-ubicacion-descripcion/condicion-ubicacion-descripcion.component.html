@@ -1,0 +1,422 @@
+<div class="d-flex justify-content-center section-datos">
+  <div class="container h-100">
+    <div class="row w-100 m-0 my-2 px-1">
+      <h2 class="text-center text-uppercase">
+        Condición Especial Del Contribuyente
+      </h2>
+      <div class="col-4">
+        <div class="form-floating">
+          <select
+            class="form-select mb-3"
+            #condicion
+            aria-label="Default select example"
+            (change)="getValCondicion()"
+          >
+            <option selected value="0" disabled>Seleccione Condición</option>
+            <option value="Inefacto">Inefacto</option>
+            <option value="Pensionista">Pensionista</option>
+            <option value="Ninguno">Ninguno</option>
+          </select>
+          <label for="condicion">Condicion</label>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Descripción"
+            name="descripcion"
+            [(ngModel)]="condicionDescripcion.P_DescripcionCintribuyente"
+            aria-describedby="basic-addon1"
+          />
+          <label for="descripcion">Descripcion</label>
+        </div>
+      </div>
+      <div class="col-4">
+        <label for="fechaResolucion" class="form-label text-uppercase"
+          >fecha de Resolución</label
+        >
+        <div class="input-group mb-3">
+          <input
+            type="date"
+            class="form-control"
+            aria-label="fecha"
+            name="fechaResolucion"
+            [(ngModel)]="condicionDescripcion.P_FechaResolucion"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <label for="fechaAplicacion" class="form-label text-uppercase"
+          >fecha de Aplicación</label
+        >
+        <div class="input-group mb-3">
+          <input
+            type="date"
+            aria-label="fecha"
+            name="fechaAplicacion"
+            class="form-control"
+            [(ngModel)]="condicionDescripcion.P_FechaAplicacion"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <label for="fechaVencimiento" class="form-label text-uppercase"
+          >fecha de Vencimiento</label
+        >
+        <div class="input-group mb-3">
+          <input
+            type="date"
+            class="form-control"
+            aria-label="fecha"
+            name="fechaVencimiento"
+            [(ngModel)]="condicionDescripcion.P_FechaVencimiento"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row w-100 m-0 px-1 my-2">
+      <h2 class="text-center text-uppercase">Descripción del Predio</h2>
+      <h3 class="text-uppercase text-bg-primary rounded shadow">Vía</h3>
+      <div class="col-6">
+        <div class="input-group mb-3">
+          <!-- ? CAMBIAR A SELECT Y CARGAR DATOS MEDIANTE NGFOR -->
+          <select class="form-select mb-3" #tipoVia (change)="getValTipoVia()">
+            <option selected value="0" disabled>Seleccione Tipo Vìa</option>
+            <option
+              value="dni"
+              *ngFor="let data of selectTipoViaArray"
+              value="{{ data.idTipoVia }}"
+            >
+              {{ data.nombre }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="via"
+            [(ngModel)]="condicionDescripcion.P_Via"
+            placeholder="Via"
+          />
+        </div>
+      </div>
+      <div class="col-3">
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Nª"
+          name="n"
+          [(ngModel)]="condicionDescripcion.P_NumeroVia"
+        />
+      </div>
+      <div class="col-3">
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Km"
+          name="km"
+          [(ngModel)]="condicionDescripcion.P_Km"
+        />
+      </div>
+      <div class="col-3">
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Mz"
+          name="mz"
+          [(ngModel)]="condicionDescripcion.P_Mz"
+        />
+      </div>
+      <div class="col-3">
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Lt"
+          name="lt"
+          [(ngModel)]="condicionDescripcion.P_Lote"
+        />
+      </div>
+    </div>
+    <div class="row w-100 m-0 px-1 my-2">
+      <h3 class="text-uppercase text-bg-primary rounded shadow">Edificio</h3>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Tipo de Edificio"
+            name="tipoEdificio"
+            [(ngModel)]="condicionDescripcion.P_TipoEdif"
+          />
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="basic-url"
+            placeholder="Nº"
+            name="n"
+            [(ngModel)]="condicionDescripcion.P_Numero"
+          />
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Tipo de Int."
+            name="tipoInt"
+            [(ngModel)]="condicionDescripcion.P_TipoInt"
+          />
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            placeholder="Sublote"
+            name="sublote"
+            [(ngModel)]="condicionDescripcion.P_Sublote"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row w-100 m-0 px-1 my-2">
+      <h3 class="text-uppercase text-bg-primary rounded shadow">Predio</h3>
+      <div class="col-4">
+        <div class="form-floating">
+          <select
+            class="form-select mb-3"
+            #tipoAgrupacion
+            aria-label="Default select example"
+            (change)="getValTipoAgrupacion()"
+          >
+            <option selected value="0" disabled>
+              Seleccione Tipo de Agrupación
+            </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <label for="condicion">Agrupación</label>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="basic-url"
+            placeholder="Nº"
+            name="n"
+            [(ngModel)]="condicionDescripcion.P_NumeroPredio"
+          />
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Zona"
+            name="zona"
+            [(ngModel)]="condicionDescripcion.P_Zona"
+          />
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            name="sector"
+            placeholder="Sector"
+            [(ngModel)]="condicionDescripcion.P_Sector"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            placeholder="Manzana"
+            name="manzana"
+            [(ngModel)]="condicionDescripcion.P_Manzana"
+          />
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            name="categoria"
+            placeholder="Categoria"
+            [(ngModel)]="condicionDescripcion.P_LoteCategoria"
+          />
+        </div>
+      </div>
+      <!-- <div class="col-3">
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="basic-url"
+            placeholder="Lote"
+            name="lote"
+            [(ngModel)]="lote"
+          />
+        </div>
+      </div> -->
+      <div class="col-9">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            placeholder="Habilitcación Urbana"
+            name="habilitacionUrbana"
+            [(ngModel)]="condicionDescripcion.P_HabilitacionHurbana"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row w-100 m-0 px-1 my-2">
+      <h3 class="text-uppercase text-bg-primary rounded shadow mx-1">Area</h3>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Tipo de Propiedad"
+            name="tipoPropiedad"
+            [(ngModel)]="condicionDescripcion.P_TipodePropiedad"
+          />
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="basic-url"
+            name="porcentaje"
+            [(ngModel)]="condicionDescripcion.P_PorcentajePropiedad"
+            placeholder="% de Propiedad"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <input
+            type="date"
+            class="form-control"
+            name="fechapropiedad"
+            [(ngModel)]="condicionDescripcion.P_FechaAdquisicion"
+          />
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            name="terrenoDeclaradoPropio"
+            [(ngModel)]="condicionDescripcion.P_AreaTerreno_PropiaDeclarada"
+            placeholder="Area de terreno propia declarada"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            name="terrenoDeclaradoComun"
+            [(ngModel)]="condicionDescripcion.P_AreaTerreno_ComunDeclarada"
+            placeholder="Área de terreno comun declarada"
+          />
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            name="bc"
+            [(ngModel)]="condicionDescripcion.P_PorcentajeBc"
+            placeholder="%bc"
+          />
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            name="terrenoMatriz"
+            [(ngModel)]="condicionDescripcion.P_TerrenoMatriz"
+            placeholder="Área de terreno Matriz"
+          />
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            name="terrenoPropioVerificado"
+            [(ngModel)]="condicionDescripcion.P_AreaTerreno_PropiaVerificada"
+            placeholder="Área de terreno propia verificada"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="basic-url"
+            name="terrenoComunVerificado"
+            [(ngModel)]="condicionDescripcion.P_AreaTerreno_ComunVerificada"
+            placeholder="Área de terreno común verificada"
+          />
+        </div>
+      </div>
+      <div class="col-12 d-flex justify-content-evenly pb-3">
+        <div>
+          <button class="btn btn-danger" type="button" (click)="previus()">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i> Atras
+          </button>
+        </div>
+        <div>
+          <button class="btn btn-primary" type="button" (click)="next()">
+            Siguiente <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
